@@ -1,4 +1,4 @@
-export enum Colors {
+enum Colors {
   PRIMARY_COLOR = '#F15A29',
   SECONDARY_COLOR = '#238D6B',
   WHITE = '#ffffff',
@@ -6,3 +6,5 @@ export enum Colors {
   BLACK = '#000000',
   BLACK_TRANSPARENT = 'rgba(0,0,0,0.2)',
 }
+
+export default Colors;
