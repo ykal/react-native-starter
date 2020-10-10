@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.ykal.starter"
+        applicationId "com.eshiexpress.customer"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'starter' do
-  # Pods for starter
+target 'EshiCustomer' do
+  # Pods for EshiCustomer
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,9 +77,9 @@ target 'starter' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'starterTests' do
+  target 'EshiCustomerTests' do
     inherit! :complete
-    # Pods for startering
+    # Pods for EshiCustomering
   end
 
   use_native_modules!
@@ -94,11 +94,11 @@ target 'starter' do
   end
 end
 
-target 'starter-tvOS' do
-  # Pods for starter-tvOS
+target 'EshiCustomer-tvOS' do
+  # Pods for EshiCustomer-tvOS
 
-  target 'starter-tvOSTests' do
+  target 'EshiCustomer-tvOSTests' do
     inherit! :search_paths
-    # Pods for startering
+    # Pods for EshiCustomering
   end
 end
