@@ -8,6 +8,9 @@ import ItemInformationForm from './item-information-form';
 import PickupInformationForm from './pickup-information-form';
 import DeliveryInformationForm from './delivery-information-form';
 import OrderInformationForm from './order-information-form';
+import Header from './header';
+import Order from './order';
+import Item from './item';
 
 export {
   CustomText,
@@ -20,4 +23,7 @@ export {
   PickupInformationForm,
   DeliveryInformationForm,
   OrderInformationForm,
+  Header,
+  Order,
+  Item,
 };

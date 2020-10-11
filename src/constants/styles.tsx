@@ -62,5 +62,51 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     elevation: 2,
   },
+  defaultShadow: {
+    shadowColor: Colors.GREY,
+    shadowRadius: 3,
+    shadowOffset: {
+      height: 2,
+      width: 2,
+    },
+    elevation: 2,
+    shadowOpacity: 0.2,
+  },
+  subHeadingText: {
+    color: Colors.BLACK,
+    fontSize: 17,
+  },
+  subHeadingIcon: {
+    color: Colors.PRIMARY_COLOR,
+    fontSize: 20,
+  },
+  captionIcon: {
+    color: Colors.GREY,
+    fontSize: 14,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  bottomActions: {
+    position: 'absolute',
+    bottom: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 15,
+    backgroundColor: Colors.WHITE,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    width: '100%',
+    shadowColor: Colors.GREY,
+    shadowRadius: 20,
+    shadowOffset: {
+      height: 2,
+      width: 2,
+    },
+    elevation: 2,
+    shadowOpacity: 0.2,
+  },
 });
 export default styles;
