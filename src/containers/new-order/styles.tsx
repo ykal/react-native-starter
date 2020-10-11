@@ -11,6 +11,18 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginHorizontal: 15,
   },
+  swipeRightButton: {
+    position: 'absolute',
+    left: -25,
+    bottom: '50%',
+    backgroundColor: 'rgba(241, 90, 39, 0.48)',
+  },
+  swipeLeftButton: {
+    position: 'absolute',
+    right: -25,
+    bottom: '50%',
+    backgroundColor: 'rgba(241, 90, 39, 0.48)',
+  },
 });
 
 export default styles;

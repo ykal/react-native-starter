@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
+import GestureRecognizer from 'react-native-swipe-gestures';
+import Icon from 'react-native-easy-icon';
+
 import {
   DeliveryInformationForm,
   FormStepHeader,
@@ -7,8 +10,8 @@ import {
   OrderInformationForm,
   PickupInformationForm,
 } from '../../components';
-
 import styles from './styles';
+import globalStyles from '../../constants/styles';
 
 const FORMS = [
   {
@@ -37,25 +40,68 @@ const FORMS = [
   },
 ];
 
+const config = {
+  velocityThreshold: 0.3,
+  directionalOffsetThreshold: 80,
+};
+
 export default function NewOrder() {
-  const [activeForm, setActiveForm] = useState(FORMS[3]);
+  const [activeForm, setActiveForm] = useState(0);
+
+  const handleSwipeLeft = () => {
+    if (FORMS[activeForm].key !== 4) {
+      setActiveForm(activeForm + 1);
+    }
+  };
+  const handleSwipeRight = () => {
+    if (FORMS[activeForm].key !== 1) {
+      setActiveForm(activeForm - 1);
+    }
+  };
+
+  const renderSwipeLeftButton = () => {
+    if (FORMS[activeForm].key !== 4) {
+      return (
+        <TouchableOpacity style={[globalStyles.iconButton, styles.swipeLeftButton]}>
+          <Icon name="ios-arrow-forward" type="ionicon" style={globalStyles.iconButtonLabel} />
+        </TouchableOpacity>
+      );
+    }
+  };
+  const renderSwipeRightButton = () => {
+    if (FORMS[activeForm].key !== 1) {
+      return (
+        <TouchableOpacity style={[globalStyles.iconButton, styles.swipeRightButton]}>
+          <Icon name="ios-arrow-back" type="ionicon" style={globalStyles.iconButtonLabel} />
+        </TouchableOpacity>
+      );
+    }
+  };
 
   const renderForm = () => {
-    if (activeForm.key === 1) {
+    if (FORMS[activeForm].key === 1) {
       return <ItemInformationForm />;
-    } else if (activeForm.key === 2) {
+    } else if (FORMS[activeForm].key === 2) {
       return <PickupInformationForm />;
-    } else if (activeForm.key === 3) {
+    } else if (FORMS[activeForm].key === 3) {
       return <DeliveryInformationForm />;
-    } else if (activeForm.key === 4) {
+    } else if (FORMS[activeForm].key === 4) {
       return <OrderInformationForm />;
     }
   };
 
   return (
     <View style={styles.container}>
-      <FormStepHeader activeForm={activeForm} />
-      <View style={styles.content}>{renderForm()}</View>
+      <FormStepHeader activeForm={FORMS[activeForm]} />
+      <GestureRecognizer
+        config={config}
+        style={styles.content}
+        onSwipeLeft={handleSwipeLeft}
+        onSwipeRight={handleSwipeRight}>
+        {renderForm()}
+        {renderSwipeLeftButton()}
+        {renderSwipeRightButton()}
+      </GestureRecognizer>
     </View>
   );
 }
