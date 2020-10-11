@@ -23,6 +23,11 @@ const styles = StyleSheet.create({
     bottom: '50%',
     backgroundColor: 'rgba(241, 90, 39, 0.48)',
   },
+  bottomAction: {
+    width: '100%',
+    alignItems: 'center',
+    marginVertical: 30,
+  },
 });
 
 export default styles;

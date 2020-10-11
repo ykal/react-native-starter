@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, TouchableOpacity} from 'react-native';
+import {ScrollView, View, TouchableOpacity} from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import Icon from 'react-native-easy-icon';
 
@@ -9,6 +9,7 @@ import {
   ItemInformationForm,
   OrderInformationForm,
   PickupInformationForm,
+  CustomButton,
 } from '../../components';
 import styles from './styles';
 import globalStyles from '../../constants/styles';
@@ -78,6 +79,12 @@ export default function NewOrder() {
     }
   };
 
+  const renderDoneButton = () => {
+    if (FORMS[activeForm].key === 4) {
+      return <CustomButton label="Done" />;
+    }
+  };
+
   const renderForm = () => {
     if (FORMS[activeForm].key === 1) {
       return <ItemInformationForm />;
@@ -93,15 +100,18 @@ export default function NewOrder() {
   return (
     <View style={styles.container}>
       <FormStepHeader activeForm={FORMS[activeForm]} />
-      <GestureRecognizer
-        config={config}
-        style={styles.content}
-        onSwipeLeft={handleSwipeLeft}
-        onSwipeRight={handleSwipeRight}>
-        {renderForm()}
-        {renderSwipeLeftButton()}
-        {renderSwipeRightButton()}
-      </GestureRecognizer>
+      <ScrollView>
+        <GestureRecognizer
+          config={config}
+          style={styles.content}
+          onSwipeLeft={handleSwipeLeft}
+          onSwipeRight={handleSwipeRight}>
+          {renderForm()}
+          {renderSwipeLeftButton()}
+          {renderSwipeRightButton()}
+        </GestureRecognizer>
+        <View style={styles.bottomAction}>{renderDoneButton()}</View>
+      </ScrollView>
     </View>
   );
 }
