@@ -42,5 +42,25 @@ const styles = StyleSheet.create({
   floatingButtonLabel: {
     fontSize: 40,
   },
+  center: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  zeroPaddign: {
+    padding: 0,
+  },
+  formCard: {
+    backgroundColor: Colors.WHITE,
+    borderRadius: 20,
+    padding: 15,
+    shadowColor: Colors.GREY,
+    shadowRadius: 3,
+    shadowOffset: {
+      height: 2,
+      width: 2,
+    },
+    shadowOpacity: 0.1,
+    elevation: 2,
+  },
 });
 export default styles;
