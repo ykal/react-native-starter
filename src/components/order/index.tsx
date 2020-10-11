@@ -6,7 +6,13 @@ import {CustomText, Item} from '../../components';
 import styles from './styles';
 import globalStyles from '../../constants/styles';
 
-export default function Order() {
+interface OrderProps {
+  withRadioButton: boolean;
+}
+
+export default function Order(props: OrderProps) {
+  const {withRadioButton} = props;
+
   return (
     <View style={styles.container}>
       <View style={styles.title}>
@@ -19,7 +25,7 @@ export default function Order() {
       </View>
       <View style={styles.items}>
         <CustomText label="Items" style={globalStyles.headlineText} />
-        <Item />
+        <Item withRadioButton />
       </View>
     </View>
   );

@@ -5,6 +5,7 @@ import Verification from './containers/verification';
 import Home from './containers/home';
 import NewOrder from './containers/new-order';
 import OrderItems from './containers/order-items';
+import OrderConfirmation from './containers/order-confirmation';
 
 export type AppTabParamList = {
   Home: undefined;
@@ -16,6 +17,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="OrderConfirmation" component={OrderConfirmation} />
       <Stack.Screen name="OrderItems" component={OrderItems} />
       <Stack.Screen name="NewOrder" component={NewOrder} />
       <Stack.Screen name="Home" component={Home} />

@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {AppState, StyleSheet} from 'react-native';
 import Colors from '../../constants/colors';
 import globalStyles from '../../constants/styles';
 
@@ -22,6 +22,20 @@ const styles = StyleSheet.create({
   itemIcon: {
     color: Colors.PRIMARY_COLOR,
     fontSize: 17,
+  },
+  otherForms: {
+    borderTopColor: Colors.BLACK_TRANSPARENT,
+    borderTopWidth: 0.3,
+    marginTop: 10,
+    paddingTop: 10,
+  },
+  share: {
+    marginTop: 10,
+    paddingTop: 10,
+    borderTopColor: Colors.BLACK_TRANSPARENT,
+    borderTopWidth: 0.3,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 export default styles;
