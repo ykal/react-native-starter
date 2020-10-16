@@ -17,12 +17,12 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="OrderConfirmation" component={OrderConfirmation} />
-      <Stack.Screen name="OrderItems" component={OrderItems} />
-      <Stack.Screen name="NewOrder" component={NewOrder} />
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Verification" component={Verification} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Verification" component={Verification} />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="NewOrder" component={NewOrder} />
+      <Stack.Screen name="OrderItems" component={OrderItems} />
+      <Stack.Screen name="OrderConfirmation" component={OrderConfirmation} />
     </Stack.Navigator>
   );
 };

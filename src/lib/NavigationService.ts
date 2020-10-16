@@ -7,6 +7,9 @@ export default class NavigationService {
   static navigate(name: string, params?: object) {
     navigationRef.current?.navigate(name, params);
   }
+  static goback() {
+    navigationRef.current?.goBack();
+  }
 
   // add other navigation functions that you need and export them
 }

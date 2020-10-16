@@ -5,15 +5,18 @@ import Icon from 'react-native-easy-icon';
 import {Header, CustomButton, Order} from '../../components';
 import styles from './styles';
 import globalStyles from '../../constants/styles';
+import NavigationService from '../../lib/NavigationService';
 
 export default function OrderConfimation() {
   const rightComponent = (
-    <TouchableOpacity style={globalStyles.iconButton}>
+    <TouchableOpacity
+      style={globalStyles.iconButton}
+      onPress={() => NavigationService.navigate('Home')}>
       <Icon name="ios-save" type="ionicon" style={globalStyles.iconButtonLabel} />
     </TouchableOpacity>
   );
   const leftComponent = (
-    <TouchableOpacity style={globalStyles.iconButton}>
+    <TouchableOpacity style={globalStyles.iconButton} onPress={() => NavigationService.goback()}>
       <Icon name="ios-arrow-back" type="ionicon" style={globalStyles.iconButtonLabel} />
     </TouchableOpacity>
   );
@@ -35,7 +38,7 @@ export default function OrderConfimation() {
         </View>
       </View>
       <View style={[globalStyles.bottomActions, globalStyles.center]}>
-        <CustomButton label="Finish" />
+        <CustomButton label="Finish" onPress={() => NavigationService.navigate('Home')} />
       </View>
     </View>
   );

@@ -5,15 +5,18 @@ import Icon from 'react-native-easy-icon';
 import {CustomButton, Header, Order} from '../../components';
 import styles from './styles';
 import globalStyles from '../../constants/styles';
+import NavigationService from '../../lib/NavigationService';
 
 export default function OrderItems() {
   const rightComponent = (
-    <TouchableOpacity style={globalStyles.iconButton}>
+    <TouchableOpacity
+      style={globalStyles.iconButton}
+      onPress={() => NavigationService.navigate('Home')}>
       <Icon name="ios-save" type="ionicon" style={globalStyles.iconButtonLabel} />
     </TouchableOpacity>
   );
   const leftComponent = (
-    <TouchableOpacity style={globalStyles.iconButton}>
+    <TouchableOpacity style={globalStyles.iconButton} onPress={() => NavigationService.goback()}>
       <Icon name="ios-arrow-back" type="ionicon" style={globalStyles.iconButtonLabel} />
     </TouchableOpacity>
   );
@@ -28,10 +31,19 @@ export default function OrderItems() {
       </View>
       <View style={globalStyles.bottomActions}>
         <View>
-          <CustomButton label="Add Item" containerStyle={styles.button} ghost />
+          <CustomButton
+            label="Add Item"
+            containerStyle={styles.button}
+            ghost
+            onPress={() => NavigationService.navigate('New Order')}
+          />
         </View>
         <View>
-          <CustomButton label="Submit" containerStyle={styles.button} />
+          <CustomButton
+            label="Submit"
+            containerStyle={styles.button}
+            onPress={() => NavigationService.navigate('OrderConfirmation')}
+          />
         </View>
       </View>
     </View>

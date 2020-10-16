@@ -13,6 +13,7 @@ import {
 } from '../../components';
 import styles from './styles';
 import globalStyles from '../../constants/styles';
+import NavigationService from '../../lib/NavigationService';
 
 const FORMS = [
   {
@@ -81,7 +82,7 @@ export default function NewOrder() {
 
   const renderDoneButton = () => {
     if (FORMS[activeForm].key === 4) {
-      return <CustomButton label="Done" />;
+      return <CustomButton label="Done" onPress={() => NavigationService.navigate('OrderItems')} />;
     }
   };
 

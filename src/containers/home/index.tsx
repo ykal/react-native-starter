@@ -5,6 +5,7 @@ import Icon from 'react-native-easy-icon';
 import styles from './styles';
 import globalStyles from '../../constants/styles';
 import {CustomText} from '../../components';
+import NavigationService from '../../lib/NavigationService';
 
 export default function Home() {
   const renderNoOrder = () => (
@@ -30,7 +31,9 @@ export default function Home() {
       </View>
       <View style={styles.content}>
         {renderNoOrder()}
-        <TouchableOpacity style={[globalStyles.iconButton, globalStyles.floatingButton]}>
+        <TouchableOpacity
+          style={[globalStyles.iconButton, globalStyles.floatingButton]}
+          onPress={() => NavigationService.navigate('NewOrder')}>
           <Icon
             name="ios-add"
             type="ionicon"

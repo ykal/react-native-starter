@@ -7,12 +7,14 @@ interface CustomButtonProps {
   label: string;
   ghost?: boolean;
   containerStyle?: ViewStyle;
+  onPress?: any;
 }
 
 export default function CustomButton(props: CustomButtonProps) {
-  const {label, ghost, containerStyle} = props;
+  const {label, ghost, containerStyle, onPress} = props;
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={[styles.container, ghost ? styles.ghost : styles.solid, {...containerStyle}]}>
       <CustomText
         label={label}
