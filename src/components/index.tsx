@@ -11,6 +11,7 @@ import OrderInformationForm from './order-information-form';
 import Header from './header';
 import Order from './order';
 import Item from './item';
+import Modal from './modal';
 
 export {
   CustomText,
@@ -26,4 +27,5 @@ export {
   Header,
   Order,
   Item,
+  Modal,
 };
