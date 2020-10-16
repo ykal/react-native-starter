@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import Colors from '../../constants/colors';
+import globalStyles from '../../constants/styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,6 +28,28 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     marginVertical: 30,
+  },
+  imageContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+  },
+  itemImage: {
+    width: 100,
+    height: 100,
+    backgroundColor: Colors.WHITE,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 50,
+    ...globalStyles.defaultShadow,
+  },
+  icon: {
+    fontSize: 40,
+    color: Colors.PRIMARY_COLOR,
+  },
+  image: {
+    width: 60,
+    height: 60,
   },
 });
 

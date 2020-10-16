@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {ScrollView, View, TouchableOpacity} from 'react-native';
+import {ScrollView, View, TouchableOpacity, Image} from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import Icon from 'react-native-easy-icon';
+import ImagePicker from 'react-native-image-picker';
 
 import {
   DeliveryInformationForm,
@@ -47,8 +48,13 @@ const config = {
   directionalOffsetThreshold: 80,
 };
 
+const ImagePickerOptions = {
+  title: 'Select Image',
+};
+
 export default function NewOrder() {
   const [activeForm, setActiveForm] = useState(0);
+  const [itemImage, setItemImage] = useState<any>(null);
 
   const handleSwipeLeft = () => {
     if (FORMS[activeForm].key !== 4) {
@@ -98,10 +104,42 @@ export default function NewOrder() {
     }
   };
 
+  const chooseImage = () => {
+    ImagePicker.showImagePicker(ImagePickerOptions, (response) => {
+      console.log('Response = ', response);
+
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+      } else {
+        setItemImage(response);
+      }
+    });
+  };
+
   return (
     <View style={styles.container}>
       <FormStepHeader activeForm={FORMS[activeForm]} />
       <ScrollView>
+        <View style={styles.imageContainer}>
+          <TouchableOpacity style={styles.itemImage} onPress={chooseImage}>
+            {itemImage ? (
+              <Image
+                source={{
+                  uri: itemImage.uri,
+                }}
+                style={styles.image}
+                resizeMethod="scale"
+                resizeMode="center"
+              />
+            ) : (
+              <Icon name="ios-camera" type="ionicon" style={styles.icon} />
+            )}
+          </TouchableOpacity>
+        </View>
         <GestureRecognizer
           config={config}
           style={styles.content}
