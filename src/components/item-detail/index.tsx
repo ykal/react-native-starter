@@ -18,7 +18,7 @@ export default function ItemDetail(props: ItemDetailProps) {
 
   const renderMetaData = (title: string, value: string) => (
     <View style={styles.metadataContainer}>
-      <Icon name="ios-pin" type="ionicon" style={styles.metadataIcon} />
+      <Icon name="ios-checkmark-circle" type="ionicon" style={styles.metadataIcon} />
       <CustomText label={`${title} : `} style={styles.metadataTitle} />
       <CustomText label={value} style={styles.metadataValue} />
     </View>
