@@ -1,13 +1,15 @@
-import React from 'react';
-import {View, TouchableOpacity, SafeAreaView, Button} from 'react-native';
+import React, {useState} from 'react';
+import {View, TouchableOpacity, SafeAreaView} from 'react-native';
 import Icon from 'react-native-easy-icon';
 
-import {Header, CustomButton, Order} from '../../components';
+import {Header, CustomButton, Order, Modal, CustomText} from '../../components';
 import styles from './styles';
 import globalStyles from '../../constants/styles';
 import NavigationService from '../../lib/NavigationService';
 
 export default function OrderConfimation() {
+  const [isPriceVisible, setIsPriceVisible] = useState(false);
+
   const rightComponent = (
     <TouchableOpacity
       style={globalStyles.iconButton}
@@ -31,15 +33,44 @@ export default function OrderConfimation() {
         />
       </SafeAreaView>
       <View style={styles.content}>
-        <Order withRadioButton />
+        <Order withRadioButton hideDetail />
 
         <View style={styles.action}>
-          <CustomButton label="Calculate Price" ghost />
+          <CustomButton label="Calculate Price" ghost onPress={() => setIsPriceVisible(true)} />
         </View>
       </View>
       <View style={[globalStyles.bottomActions, globalStyles.center]}>
         <CustomButton label="Finish" onPress={() => NavigationService.navigate('Home')} />
       </View>
+      <Modal isVisible={isPriceVisible} onClose={() => setIsPriceVisible(false)}>
+        <View style={styles.price}>
+          <View style={styles.priceListItem}>
+            <View style={styles.row}>
+              <Icon name="ios-archive" type="ionicon" style={styles.icon} />
+              <View style={styles.row}>
+                <CustomText label="Item 1" style={{...styles.itemName}} />
+                <CustomText
+                  label="(Parcel)"
+                  style={{...globalStyles.headlineText, ...styles.itemName}}
+                />
+              </View>
+            </View>
+            <CustomText label="90 ETB" style={{...globalStyles.headlineText}} />
+          </View>
+        </View>
+        <View>
+          <View style={styles.row}>
+            <Icon name="ios-checkmark-circle" type="ionicon" style={styles.icon} />
+            <CustomText label="No. Vehicles : " />
+            <CustomText label="2" />
+          </View>
+          <View style={styles.row}>
+            <Icon name="ios-checkmark-circle" type="ionicon" style={styles.icon} />
+            <CustomText label="No. Routes : " />
+            <CustomText label="2" />
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }

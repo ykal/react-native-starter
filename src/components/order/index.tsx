@@ -10,10 +10,11 @@ import NavigationService from '../../lib/NavigationService';
 
 interface OrderProps {
   withRadioButton: boolean;
+  hideDetail: boolean;
 }
 
 export default function Order(props: OrderProps) {
-  const {withRadioButton} = props;
+  const {withRadioButton, hideDetail} = props;
 
   const [isItemDetailVisible, setIsItemDetailVisible] = useState(false);
 
@@ -41,7 +42,9 @@ export default function Order(props: OrderProps) {
         <CustomText label="Items" style={globalStyles.headlineText} />
         <Item withRadioButton onPress={() => setIsItemDetailVisible(true)} />
       </View>
-      <Modal isVisible={isItemDetailVisible} onClose={() => setIsItemDetailVisible(false)}>
+      <Modal
+        isVisible={isItemDetailVisible && !hideDetail}
+        onClose={() => setIsItemDetailVisible(false)}>
         <ItemDetail onEdit={handleEditItem} onDelete={handleDeleteItem} />
       </Modal>
     </View>
