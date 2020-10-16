@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import Icon from 'react-native-easy-icon';
 
-import {CustomText, Item} from '../../components';
+import {CustomText, Item, Modal} from '../../components';
 import styles from './styles';
 import globalStyles from '../../constants/styles';
+import ItemDetail from '../item-detail';
+import NavigationService from '../../lib/NavigationService';
 
 interface OrderProps {
   withRadioButton: boolean;
@@ -12,6 +14,18 @@ interface OrderProps {
 
 export default function Order(props: OrderProps) {
   const {withRadioButton} = props;
+
+  const [isItemDetailVisible, setIsItemDetailVisible] = useState(false);
+
+  const handleEditItem = () => {
+    setIsItemDetailVisible(false);
+    NavigationService.navigate('NewOrder');
+  };
+
+  const handleDeleteItem = () => {
+    setIsItemDetailVisible(false);
+    NavigationService.navigate('OrderItems');
+  };
 
   return (
     <View style={styles.container}>
@@ -25,8 +39,11 @@ export default function Order(props: OrderProps) {
       </View>
       <View style={styles.items}>
         <CustomText label="Items" style={globalStyles.headlineText} />
-        <Item withRadioButton />
+        <Item withRadioButton onPress={() => setIsItemDetailVisible(true)} />
       </View>
+      <Modal isVisible={isItemDetailVisible} onClose={() => setIsItemDetailVisible(false)}>
+        <ItemDetail onEdit={handleEditItem} onDelete={handleDeleteItem} />
+      </Modal>
     </View>
   );
 }

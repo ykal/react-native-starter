@@ -12,6 +12,7 @@ import Header from './header';
 import Order from './order';
 import Item from './item';
 import Modal from './modal';
+import ItemDetail from './item-detail';
 
 export {
   CustomText,
@@ -28,4 +29,5 @@ export {
   Order,
   Item,
   Modal,
+  ItemDetail,
 };

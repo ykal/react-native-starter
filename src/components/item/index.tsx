@@ -15,6 +15,7 @@ import Colors from '../../constants/colors';
 
 interface ItemProps {
   withRadioButton: boolean;
+  onPress: any;
 }
 
 const radioProps = [
@@ -24,7 +25,7 @@ const radioProps = [
 ];
 
 export default function Item(props: ItemProps) {
-  const {withRadioButton} = props;
+  const {withRadioButton, onPress} = props;
 
   const [selectedRadioInput, setSelectedRadioInput] = useState(radioProps[0].label);
 
@@ -48,7 +49,7 @@ export default function Item(props: ItemProps) {
   };
 
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={[globalStyles.row, styles.itemHeader]}>
         <Icon name="ios-archive" type="ionicon" style={styles.itemIcon} />
         <CustomText label="Item 1" style={styles.label} />
