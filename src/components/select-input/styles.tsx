@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
   },
   item: {
     justifyContent: 'flex-start',
-    backgroundColor: 'red',
   },
   label: {
     color: Colors.GREY,

@@ -7,6 +7,8 @@ const styles = StyleSheet.create({
     height: 15,
   },
   input: {
+    padding: 0,
+    margin: 0,
     paddingHorizontal: 10,
   },
   loginInput: {
@@ -15,7 +17,8 @@ const styles = StyleSheet.create({
     borderColor: Colors.BLACK_TRANSPARENT,
     borderWidth: 1,
     width: '70%',
-    padding: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
     borderRadius: 30,
     marginVertical: 15,
   },

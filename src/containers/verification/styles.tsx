@@ -3,14 +3,16 @@ import Colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
   input: {
-    paddingHorizontal: 10,
+    margin: 0,
+    padding: 0,
   },
   loginInput: {
     alignItems: 'center',
     borderColor: Colors.BLACK_TRANSPARENT,
     borderWidth: 1,
     width: '70%',
-    padding: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 7,
     borderRadius: 30,
     marginVertical: 15,
   },
