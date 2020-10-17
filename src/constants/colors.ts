@@ -6,6 +6,7 @@ enum Colors {
   BLACK = '#000000',
   BLACK_TRANSPARENT = 'rgba(0,0,0,0.2)',
   BLACK_TRANSPARENT7 = 'rgba(0,0,0,0.7)',
+  GREEN = '#1e7b69',
 }
 
 export default Colors;

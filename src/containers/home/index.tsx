@@ -4,7 +4,7 @@ import Icon from 'react-native-easy-icon';
 
 import styles from './styles';
 import globalStyles from '../../constants/styles';
-import {CustomText} from '../../components';
+import {ActiveOrder, CustomText} from '../../components';
 import NavigationService from '../../lib/NavigationService';
 
 export default function Home() {
@@ -30,7 +30,7 @@ export default function Home() {
         <CustomText label="Your Orders" style={styles.title} />
       </View>
       <View style={styles.content}>
-        {renderNoOrder()}
+        <ActiveOrder />
         <TouchableOpacity
           style={[globalStyles.iconButton, globalStyles.floatingButton]}
           onPress={() => NavigationService.navigate('NewOrder')}>

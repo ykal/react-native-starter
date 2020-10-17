@@ -108,5 +108,8 @@ const styles = StyleSheet.create({
     elevation: 20,
     shadowOpacity: 0.2,
   },
+  horizontalSpaceBetween: {
+    justifyContent: 'space-between',
+  },
 });
 export default styles;
