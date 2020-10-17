@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import Colors from '../../constants/colors';
+import globalStyles from '../../constants/styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,6 +34,16 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  bottomButton: {
+    backgroundColor: Colors.WHITE,
+    borderTopRightRadius: 15,
+    borderTopLeftRadius: 15,
+    ...globalStyles.defaultShadow,
+    elevation: 50,
+    shadowRadius: 50,
+    ...globalStyles.center,
+    padding: 7,
   },
 });
 export default styles;

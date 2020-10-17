@@ -14,6 +14,7 @@ import Item from './item';
 import Modal from './modal';
 import ItemDetail from './item-detail';
 import ActiveOrder from './active-order';
+import CompletedOrders from './completed-orders-list';
 
 export {
   CustomText,
@@ -32,4 +33,5 @@ export {
   Modal,
   ItemDetail,
   ActiveOrder,
+  CompletedOrders,
 };

@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    bottom: 100,
+    bottom: 10,
     right: 15,
   },
   floatingButtonLabel: {

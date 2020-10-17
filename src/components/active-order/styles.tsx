@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.WHITE,
     padding: 15,
     borderRadius: 15,
+    marginVertical: 7,
   },
   mainIcon: {
     fontSize: 20,
