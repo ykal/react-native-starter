@@ -111,5 +111,18 @@ const styles = StyleSheet.create({
   horizontalSpaceBetween: {
     justifyContent: 'space-between',
   },
+  primaryText: {
+    color: Colors.PRIMARY_COLOR,
+  },
+  green: {
+    color: Colors.GREEN,
+  },
+  alignEndHorizontal: {
+    justifyContent: 'flex-end',
+  },
+  marginRight: {
+    marginRight: 10,
+  },
+  marginTop: {marginTop: 10},
 });
 export default styles;

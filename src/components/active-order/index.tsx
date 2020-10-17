@@ -5,9 +5,9 @@ import CustomText from '../custom-text';
 import styles from './styles';
 import globalStyles from '../../constants/styles';
 
-export default function ActiveOrder() {
+export default function ActiveOrder(props: any) {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={props.onPress}>
       <View style={styles.header}>
         <View style={[globalStyles.row, globalStyles.horizontalSpaceBetween, styles.padding10]}>
           <View style={[globalStyles.row]}>

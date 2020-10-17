@@ -27,7 +27,7 @@ export default function Home() {
     return !isCompletedOrderVisible ? (
       <>
         <View style={styles.content}>
-          <ActiveOrder />
+          <ActiveOrder onPress={() => NavigationService.navigate('Shipment')} />
           <TouchableOpacity
             style={[globalStyles.iconButton, globalStyles.floatingButton]}
             onPress={() => NavigationService.navigate('NewOrder')}>
