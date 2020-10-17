@@ -52,7 +52,8 @@ export default function Shipment() {
           <View style={[globalStyles.row, globalStyles.alignEndHorizontal, globalStyles.marginTop]}>
             <View style={[globalStyles.row, globalStyles.center]}>
               <TouchableOpacity
-                style={[globalStyles.iconButton, globalStyles.marginRight, styles.metadataButton]}>
+                style={[globalStyles.iconButton, globalStyles.marginRight, styles.metadataButton]}
+                onPress={() => NavigationService.navigate('VerifyReceiver')}>
                 <Icon
                   name="retweet"
                   type="font-awesome"

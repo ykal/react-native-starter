@@ -7,6 +7,7 @@ import NewOrder from './containers/new-order';
 import OrderItems from './containers/order-items';
 import OrderConfirmation from './containers/order-confirmation';
 import Shipment from './containers/shipment';
+import VerifyReceiver from './containers/verify-receiver';
 
 export type AppTabParamList = {
   Home: undefined;
@@ -25,6 +26,7 @@ const App = () => {
       <Stack.Screen name="Shipment" component={Shipment} />
       <Stack.Screen name="OrderItems" component={OrderItems} />
       <Stack.Screen name="OrderConfirmation" component={OrderConfirmation} />
+      <Stack.Screen name="VerifyReceiver" component={VerifyReceiver} />
     </Stack.Navigator>
   );
 };
