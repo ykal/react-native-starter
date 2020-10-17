@@ -1,4 +1,4 @@
-import {NavigationContainerRef} from '@react-navigation/native';
+import {DrawerActions, NavigationContainerRef} from '@react-navigation/native';
 import * as React from 'react';
 
 export const navigationRef: React.RefObject<NavigationContainerRef> = React.createRef();
@@ -9,6 +9,10 @@ export default class NavigationService {
   }
   static goback() {
     navigationRef.current?.goBack();
+  }
+
+  static toggleDrawer() {
+    navigationRef.current?.dispatch(DrawerActions.toggleDrawer());
   }
 
   // add other navigation functions that you need and export them

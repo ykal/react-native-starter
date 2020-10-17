@@ -23,7 +23,7 @@ export default function Verification() {
       <CustomButton
         label="Submit"
         containerStyle={styles.loginButton}
-        onPress={() => NavigationService.navigate('Home')}
+        onPress={() => NavigationService.navigate('AuthorizedScreens')}
       />
     </AuthScreenWrapper>
   );
