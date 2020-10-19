@@ -22,7 +22,9 @@ export default function ReceiptList() {
   );
 
   const receipt = (name: string) => (
-    <TouchableOpacity style={styles.receipt}>
+    <TouchableOpacity
+      style={styles.receipt}
+      onPress={() => NavigationService.navigate('ReceiptDetail')}>
       <View style={[globalStyles.row, styles.header]}>
         <Icon
           name="ios-archive"

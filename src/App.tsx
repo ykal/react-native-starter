@@ -22,7 +22,7 @@ const Drawer = createDrawerNavigator();
 
 const App = () => {
   const HomeStack = () => (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="NewOrder" component={NewOrder} />
       <Stack.Screen name="Shipment" component={Shipment} />
@@ -34,7 +34,7 @@ const App = () => {
 
   const AuthorizedScreens = () => (
     <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Home" component={HomeStack} />
       <Drawer.Screen name="Reciepts" component={RecieptNavigation} />
     </Drawer.Navigator>
   );

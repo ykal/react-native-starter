@@ -52,7 +52,9 @@ export default function Home() {
     <View style={styles.container}>
       <View style={styles.headerContent}>
         <SafeAreaView style={styles.header}>
-          <TouchableOpacity style={globalStyles.iconButton}>
+          <TouchableOpacity
+            style={globalStyles.iconButton}
+            onPress={() => NavigationService.toggleDrawer()}>
             <Icon name="ios-menu" type="ionicon" style={globalStyles.iconButtonLabel} />
           </TouchableOpacity>
           <TouchableOpacity style={globalStyles.iconButton}>
